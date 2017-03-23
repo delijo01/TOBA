@@ -9,42 +9,71 @@ and open the template in the editor.
     SPC Student ID: 434299
     Course COP 2806 - Java Web Applications
 -->
+<!--
+    Page Assignment for Assignment 1
+    1. Create a New_customer.html
+    2. Add a form to the page
+    3. Add 8 input eliminates (FirstName, LastName, Phone, Address, City, State, Zipcode, Email)
+    4. Add a Submit Button
+    5. Add a link to the "New Customer Sign Up Page"
+-->
+<html>
 <html>
     <head>
+        <!-- Add a title for the html -->
         <title>New Customer Entry Form</title>
         <link rel="stylesheet" href="styles/main.css" type="text/css"/>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div><header>
+        <div>
+            <!-- Create a header for the New Customer page  -->
+            <header>
                 <h1>New Customer</h1>
             </header>
             <section>
-                
-                <form action="" method="post" style="align-content: center" >
+                <!--Create a form for the New Customer Entry Process-->
+                <form action="Success.html" method="post" style="align-content: center" >
                     <p style="align-content: center">
+                    <!--Created a label for the FirstName input-->
                     <label id="lblfirstName" title="First Name">First Name: </label>
+                    <!--Created the input for the FirstName type = text-->
                     <input type="text" id="txtFName" name="firstname"><br>
+                    <!--Created a label for the LastName input-->
                     <label id="lbllastName" title="Last Name" >Last Name: </label>
+                    <!--Created the input for the LastName type = text-->
                     <input type="text" id="txtLName" name="lastname"><br>
+                    <!--Created a label for the Phone input-->
                     <label id="lblPhone" title="Phone">Phone: </label>
+                    <!--Created the input for the Phone type = text-->
                     <input type="text" id="txtPhone" name="phone"><br>
+                    <!--Created a label for the Address input-->
                     <label id="lblAddress" title="Address" >Address: </label>
+                    <!--Created the input for the Address type = text-->
                     <input type="text" id="txtAdd" name="address"><br>
+                    <!--Created a label for the City input-->
                     <label id="lblCity" title="City">City: </label>
+                    <!--Created a label for the City"city"-->
                     <input type="text" id="txtCity" name="city"><br>
+                    <!--Created a label for the State input-->
                     <label id="lblState" title="State" >State: </label>
+                    <!--Created the input for the State type = text-->
                     <input type="text" id="txtState" name="state"><br>
+                    <!--Created a label for the Zip Code input-->
                     <label id="lblZip" title="Zip Code">Zip Code: </label>
+                    <!--Created the input for the Zip Code type = text-->
                     <input type="text" id="txtZip" name="zipcode"><br>
+                    <!--Created a label for the Email input-->
                     <label id="lblEmail" title="Email" >Email: </label>
+                    <!--Created the input for the Email type = text-->
                     <input type="text" id="txtEmail" name="Email"><br>
+                    <!--Created a Submit button for the page-->
                     <input type="submit" value ="Submit">
+                    <!--Created a cancel button to allow the user to cancel the entry-->
                     <input type="reset" name="cancel" value ="Cancel">
                     </p>
                 </form>
-                
             </section>
             <footer></footer>
         </div>

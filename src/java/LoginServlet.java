@@ -12,112 +12,70 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
-    Name: John M Delia Jr
-    SPC Student ID: 434299
-    Course COP 2806 - Java Web Applications
+ *
+ * @author delijo01
  */
 public class LoginServlet extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * 1. Code the servlet to retrieve the username and password form the form
+     * we added to login.html. Have the servlet check that the username is equal
+     * to jsmith@toba.com and the password is equal to "letmein". Make sure you
+     * use these values. If the username and password match, the servlet to 
+     * forward the request to the account_activity.html page. If it is incorrect,
+     * it should forward the request to the login_failure.html page.
+     * 
      */
+    //Create the doPost method
     @Override
-    //protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        //set the Content Type
         response.setContentType("text/html;charset=UTF-8");
         
         // get parameters from the request
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String url = "/index.html";
-        
-        String message;
-        //jsmith@toba.com
-        if (username == "j") {
+        //create a variable for the message and set to string type
+        //String message;
+        //Create a condition to look for the username and password specified
+        if (username == "jsmith@toba.com" && password == "letmein") {
             //message = "username is correct";
-            url = "/Login_failure.html";
-//            if (password == "letmein") {
-//                //message = "Password is correct";
-//                url = "/Sucess.html";
-//            } else {
-//                //message = "Incorrect Password";
-//                url = "/Login_failure.html";
-//            }
-        } else if(username == "l") {
+            url = "/Sucess.html";
+        } else {
             //message = "Incorrect username";
-            //url = "/Login_failure.html";
-            url = "/Success.html";
+            url = "/Login_failure.html";
         }
-        
+        //get the information from the form
         getServletContext()
                 .getRequestDispatcher(url)
                 .forward(request, response);
-
-            
-//        PrintWriter out = response.getWriter(); 
-//        try {
-//            /* TODO output your page here. You may use following sample code. */
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet LoginServlet</title>");            
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
-//            out.println("</body>");
-//            out.println("</html>");
-//        }
-//        finally {
-//            out.close();
-//        }
+        
+        //print the message on the form
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet LoginServlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    //Create the doGet Method
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
+        
+        //Call the doPost method
         doPost(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-//    @Override
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//        processRequest(request, response);
-//    }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-//    @Override
-//    public String getServletInfo() {
-//        return "Short description";
-//    }// </editor-fold>
 
 }

@@ -19,28 +19,23 @@ import javax.servlet.http.HttpServletResponse;
 public class NewCustomerServlet extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * 1. Code the servlet to retrieve tghe new customer form data and just
+     * redirect to the success.html page
      *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * 2. Code the NewCustomerServlet to validate the user has entered in values
+     * for all the form fields, if not assign a message variable such as
+     *  "Please fill out all the form fields" and display a message on the 
+     *  new_customer.html page
      */
+    //Create the doPost method
     @Override
-    //protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        //set the Content Type
         response.setContentType("text/html;charset=UTF-8");
         
-        
-        // get current action
-//        String action = request.getParameter("action");
-//        if (action == null) {
-//            //action = "Success.html";  // default action
-//        }
-       
+              
         // get parameters from the request
         String firstname = request.getParameter("firstname");
         String lastname = request.getParameter("lastname");
@@ -51,11 +46,10 @@ public class NewCustomerServlet extends HttpServlet {
         String zipcode = request.getParameter("zipcode");
         String email = request.getParameter("Email");
         String url = "/New_customer.html";
+               
         
-        
-        
-        // validate the parameters
         String message;
+        //use a condition to validate the parameters
         if (firstname == null || lastname == null || phone == null || address == null || 
                 city == null || state == null || zipcode == null || email == null ||
                 firstname.isEmpty() || lastname.isEmpty() || phone.isEmpty() || 
@@ -66,68 +60,31 @@ public class NewCustomerServlet extends HttpServlet {
         } 
         else {
             message = "";
-            //url = "/Success.html";
+            url = "/Success.html";
         }
-
+        
+        //set the message attributes
         request.setAttribute("message", message);
- 
+        
+        //get the information from the form
         getServletContext()
             .getRequestDispatcher(url)
             .forward(request, response);
         
-//        try (PrintWriter out = response.getWriter()) {
-//            /* TODO output your page here. You may use following sample code. */
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet NewCustomerServlet</title>");            
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>Servlet NewCustomerServlet at " + request.getContextPath() + "</h1>");
-//            out.println("</body>");
-//            out.println("</html>");
-//        }
+        //print the message on the form
+        try (PrintWriter out = response.getWriter()) {
+            out.println("<title>Servlet NewCustomerServlet</title>");            
+            out.println("<h1>Servlet NewCustomerServlet at " + request.getContextPath() + "</h1>");
+        }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        //processRequest(request, response);
+        //Call the doPost method
         doPost(request, response);
     }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-//    @Override
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//        processRequest(request, response);
-//    }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-//    @Override
-//    public String getServletInfo() {
-//        return "Short description";
-//    }// </editor-fold>
 
 }

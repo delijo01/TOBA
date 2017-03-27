@@ -28,5 +28,10 @@
         <h1>Java Error</h1>
         <!-- Create a message to display for the Java Error  -->
         <p>An exception error has occurred</p>
+        <p>To return back to the application, click the Back Button in the left hand corner.</p>
+        
+        <h2>Exception Details:</h2>
+        <p>Type: ${pageContext.exception["class"]}</p>
+        <p>Message: ${pageContext.exception.message}</p>
     </body>
 </html>

@@ -25,8 +25,9 @@
     </head>
     <body>
         <!-- Create a heading for the Java Error  -->
-        <h1>Error message 404</h1>
+        <h1>Error message: 404 Error</h1>
         <!-- Create a message to display for the Java Error  -->
-        <p>An error has occurred!</p>
+        <p>An error has occurred! Unable to locate file.</p>
+        <p>To return back to the application, click the Back Button in the left hand corner.</p>
     </body>
 </html>

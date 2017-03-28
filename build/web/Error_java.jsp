@@ -13,6 +13,7 @@
     1. Create a Error Message jsp page
     2. Add a Heading for the page
     3. Add a message for the page
+    4. XML tags that provide error handling for all java exceptions
 -->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

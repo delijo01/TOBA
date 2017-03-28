@@ -72,9 +72,22 @@ public class NewCustomerServlet extends HttpServlet {
             .forward(request, response);
         
         //print the message on the form
-        try (PrintWriter out = response.getWriter()) {
-            out.println("<title>Servlet NewCustomerServlet</title>");            
-            out.println("<h1>Servlet NewCustomerServlet at " + request.getContextPath() + "</h1>");
+        PrintWriter out = response.getWriter();
+        try {
+            //out.println("<!DOCTYPE html>");
+            //out.println("<html>");
+            //out.println("<head>");
+            //out.println("<title>Servlet TransactionServlet</title>");
+            out.println("<h1>Servlet NewCustomerServlet" + request.getAttribute(message) + "</h1>");
+            out.println("<p>NewCustomerServlet Message " + request.getAttribute("message") + "</p>");            
+            //out.println("</head>");
+            //out.println("<body>");
+            //out.println("<h1>Servlet TransactionServlet at " + request.getContextPath() + "</h1>");
+            //out.println("</body>");
+            //out.println("</html>");
+        }
+        finally {
+            out.close();
         }
     }
 

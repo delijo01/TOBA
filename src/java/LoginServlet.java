@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
         //Create a condition to look for the username and password specified
         if (username == "jsmith@toba.com" && password == "letmein") {
             //message = "username is correct";
-            url = "/Sucess.html";
+            url = "/Account_activity.html";
         } else {
             //message = "Incorrect username";
             url = "/Login_failure.html";
@@ -55,16 +55,10 @@ public class LoginServlet extends HttpServlet {
         
         //print the message on the form
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
+
             out.println("<title>Servlet LoginServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
             out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+
         }
     }
 

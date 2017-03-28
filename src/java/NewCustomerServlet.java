@@ -35,63 +35,61 @@ public class NewCustomerServlet extends HttpServlet {
         //set the Content Type
         response.setContentType("text/html;charset=UTF-8");
         
-              
-        // get parameters from the request
-        String firstname = request.getParameter("firstname");
-        String lastname = request.getParameter("lastname");
-        String phone = request.getParameter("phone");
-        String address = request.getParameter("address");
-        String city = request.getParameter("city");
-        String state = request.getParameter("state");
-        String zipcode = request.getParameter("zipcode");
-        String email = request.getParameter("Email");
+        //set the action variable to the getParameter
+        String action = request.getParameter("action");
+        //Set the string url
         String url = "/New_customer.html";
-               
         
-        String message;
-        //use a condition to validate the parameters
-        if (firstname == null || lastname == null || phone == null || address == null || 
-                city == null || state == null || zipcode == null || email == null ||
-                firstname.isEmpty() || lastname.isEmpty() || phone.isEmpty() || 
-                address.isEmpty() || city.isEmpty() || state.isEmpty() || 
-                zipcode.isEmpty() || email.isEmpty()) {
-            message = "Please fill out all eight text boxes.";
-            url = "/New_customer.html";
-        } 
-        else {
-            message = "";
-            url = "/Success.html";
+        // get current action
+        if (action == null) {
+            action = "Add";  // default action
         }
+        // perform action and set URL to appropriate page
+        if (action.equals("Add")) {
+            url = "/New_customer.html";    // the "join" page
+        } 
+        else if (action.equals("Missing")) {
+            // get parameters from the request
+            String firstname = request.getParameter("firstname");
+            String lastname = request.getParameter("lastname");
+            String phone = request.getParameter("phone");
+            String address = request.getParameter("address");
+            String city = request.getParameter("city");
+            String state = request.getParameter("state");
+            String zipcode = request.getParameter("zipcode");
+            String email = request.getParameter("Email");
+
+            //set variable for the message
+            String message;
         
-        //set the message attributes
-        request.setAttribute("message", message);
+            //use a condition to validate the parameters
+            if (firstname == null || lastname == null || phone == null || address == null || 
+                    city == null || state == null || zipcode == null || email == null ||
+                    firstname.isEmpty() || lastname.isEmpty() || phone.isEmpty() || 
+                    address.isEmpty() || city.isEmpty() || state.isEmpty() || 
+                    zipcode.isEmpty() || email.isEmpty()) {
+                //set the variable message
+                message = "Please fill out all eight text boxes.";
+                //set the url
+                url = "/New_customer.html";
+            } 
+            else {
+                //set the variable message
+                message = "";
+                //set the url
+                url = "/Success.html";
+            }
         
+            //set the message attributes
+            request.setAttribute("message", message);
+        }
         //get the information from the form
         getServletContext()
             .getRequestDispatcher(url)
             .forward(request, response);
-        
-        //print the message on the form
-        PrintWriter out = response.getWriter();
-        try {
-            //out.println("<!DOCTYPE html>");
-            //out.println("<html>");
-            //out.println("<head>");
-            //out.println("<title>Servlet TransactionServlet</title>");
-            out.println("<h1>Servlet NewCustomerServlet" + request.getAttribute(message) + "</h1>");
-            out.println("<p>NewCustomerServlet Message " + request.getAttribute("message") + "</p>");            
-            //out.println("</head>");
-            //out.println("<body>");
-            //out.println("<h1>Servlet TransactionServlet at " + request.getContextPath() + "</h1>");
-            //out.println("</body>");
-            //out.println("</html>");
-        }
-        finally {
-            out.close();
-        }
     }
 
-
+    //Create the doGet Method
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

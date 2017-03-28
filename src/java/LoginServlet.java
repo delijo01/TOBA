@@ -38,28 +38,19 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String url = "/index.html";
-        //create a variable for the message and set to string type
-        //String message;
+
         //Create a condition to look for the username and password specified
-        if (username == "jsmith@toba.com" && password == "letmein") {
-            //message = "username is correct";
+        if(username == "jsmith@toba.com" && password == "letmein") {
+            //set the url
             url = "/Account_activity.html";
         } else {
-            //message = "Incorrect username";
+            //set the url
             url = "/Login_failure.html";
         }
         //get the information from the form
         getServletContext()
                 .getRequestDispatcher(url)
                 .forward(request, response);
-        
-        //print the message on the form
-        try (PrintWriter out = response.getWriter()) {
-
-            out.println("<title>Servlet LoginServlet</title>");            
-            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
-
-        }
     }
 
     //Create the doGet Method

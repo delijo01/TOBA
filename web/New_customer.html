@@ -26,15 +26,12 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-            
             <!-- Create a header for the New Customer page  -->
             <header>
                 <h1>New Customer</h1>
             </header>
-            <p><i>${message}</i></p>
                 <!--Create a form for the New Customer Entry Process-->
-                <form action="NewCustomerServlet" method="get" >
-                    <input type="hidden" name="action" value="Missing">
+                <form action="NewCustomerServlet" method="post" >
                     <!--<p style="align-content: center">-->
                     <!--Created a label for the FirstName input-->
                     <label class="pad_top" id="lblfirstName" title="First Name">First Name: </label>

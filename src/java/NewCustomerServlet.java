@@ -26,67 +26,74 @@ public class NewCustomerServlet extends HttpServlet {
      * for all the form fields, if not assign a message variable such as
      *  "Please fill out all the form fields" and display a message on the 
      *  new_customer.html page
+     * @param request
+     * @param response
+     * @throws javax.servlet.ServletException
+     * @throws java.io.IOException
      */
     //Create the doPost method
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+              
         //set the Content Type
         response.setContentType("text/html;charset=UTF-8");
         
-        //set the action variable to the getParameter
-        String action = request.getParameter("action");
+        //set printwriter to pull message
+        PrintWriter htmlnote = response.getWriter();
+        
         //Set the string url
         String url = "/New_customer.html";
         
-        // get current action
-        if (action == null) {
-            action = "Add";  // default action
-        }
-        // perform action and set URL to appropriate page
-        if (action.equals("Add")) {
-            url = "/New_customer.html";    // the "join" page
-        } 
-        else if (action.equals("Missing")) {
-            // get parameters from the request
-            String firstname = request.getParameter("firstname");
-            String lastname = request.getParameter("lastname");
-            String phone = request.getParameter("phone");
-            String address = request.getParameter("address");
-            String city = request.getParameter("city");
-            String state = request.getParameter("state");
-            String zipcode = request.getParameter("zipcode");
-            String email = request.getParameter("Email");
+        // get parameters from the request
+        String firstname = request.getParameter("firstname");
+        String lastname = request.getParameter("lastname");
+        String phone = request.getParameter("phone");
+        String address = request.getParameter("address");
+        String city = request.getParameter("city");
+        String state = request.getParameter("state");
+        String zipcode = request.getParameter("zipcode");
+        String email = request.getParameter("Email");
 
-            //set variable for the message
-            String message;
-        
-            //use a condition to validate the parameters
-            if (firstname == null || lastname == null || phone == null || address == null || 
-                    city == null || state == null || zipcode == null || email == null ||
-                    firstname.isEmpty() || lastname.isEmpty() || phone.isEmpty() || 
-                    address.isEmpty() || city.isEmpty() || state.isEmpty() || 
-                    zipcode.isEmpty() || email.isEmpty()) {
-                //set the variable message
-                message = "Please fill out all eight text boxes.";
-                //set the url
-                url = "/New_customer.html";
-            } 
-            else {
-                //set the variable message
-                message = "";
-                //set the url
-                url = "/Success.html";
+        //set variable for the message
+        String message;
+
+        //use a condition to validate the parameters
+        if (firstname == null || lastname == null || phone == null || address == null || 
+                city == null || state == null || zipcode == null || email == null ||
+                firstname.isEmpty() || lastname.isEmpty() || phone.isEmpty() || 
+                address.isEmpty() || city.isEmpty() || state.isEmpty() || 
+                zipcode.isEmpty() || email.isEmpty()) {
+            //set the variable message
+            message = "Please fill out all eight text boxes. </h1><br><h1> To return to New Customer form, please press the back button";
+            //set the url
+            //url = "/New_customer.html";
+            //set the message attributes
+            request.setAttribute("message", message);
+            //using a try finally
+            try {
+                //print the message to inform the user that information is missing from the form
+                htmlnote.println("<h1>Missing Information: </h1><br><h1>" + request.getAttribute("message") + "</h1>");
             }
-        
+            finally{
+                //close the html connection
+                htmlnote.close();
+            }
+        } 
+        else {
+            //set the variable message
+            message = "";
+            //set the url
+            url = "/Success.html";
             //set the message attributes
             request.setAttribute("message", message);
         }
+
         //get the information from the form
         getServletContext()
             .getRequestDispatcher(url)
             .forward(request, response);
+                
     }
 
     //Create the doGet Method

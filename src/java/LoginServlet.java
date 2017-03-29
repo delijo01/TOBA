@@ -12,8 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * @author delijo01
+    Name: John M Delia Jr
+    SPC Student ID: 434299
+    Course COP 2806 - Java Web Applications
  */
 public class LoginServlet extends HttpServlet {
 
@@ -25,6 +26,10 @@ public class LoginServlet extends HttpServlet {
      * forward the request to the account_activity.html page. If it is incorrect,
      * it should forward the request to the login_failure.html page.
      * 
+     * @param request
+     * @param response
+     * @throws javax.servlet.ServletException
+     * @throws java.io.IOException
      */
     //Create the doPost method
     @Override
@@ -37,10 +42,14 @@ public class LoginServlet extends HttpServlet {
         // get parameters from the request
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        //set the url
         String url = "/index.html";
-
+        //set the userid
+        String userid = "jsmith@toba.com";
+        //set the password
+        String pw = "letmein";
         //Create a condition to look for the username and password specified
-        if(username == "jsmith@toba.com" && password == "letmein") {
+        if( username.equals(userid) || password.equals(pw) ) {
             //set the url
             url = "/Account_activity.html";
         } else {

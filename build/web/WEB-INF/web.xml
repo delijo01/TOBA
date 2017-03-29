@@ -2,15 +2,15 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>LoginServlet</servlet-class>
+        <servlet-class>tobaPackages.LoginServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>NewCustomerServlet</servlet-name>
-        <servlet-class>NewCustomerServlet</servlet-class>
+        <servlet-class>tobaPackages.NewCustomerServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>TransactionServlet</servlet-name>
-        <servlet-class>TransactionServlet</servlet-class>
+        <servlet-class>tobaPackages.TransactionServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>

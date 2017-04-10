@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<c:import url="/includes/header.html" />
+
+<!--<%@page contentType="text/html" pageEncoding="utf-8"%>-->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<!-- <!DOCTYPE html>-->
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -14,22 +19,33 @@ and open the template in the editor.
     1. Create a Success.html
     2. Add a message that will display that the account has been successfully updated
 -->
-<html>
-    <head>
-        <!-- Add a title for the html -->
-        <title>Process Completion Message</title>
-        <link rel="stylesheet" href="styles/main.css" type="text/css"/>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>
-            <!-- Create a header for the Success page  -->
-            <header>
-                <h1>Success Message</h1>
-            </header>
-            <!-- Add a message that will display that the account has been successfully updated -->
-            <label id="lblmessSuccess" title="Success Message Box">This action completed successfully</label>
-        </div>
-    </body>
-</html>
+        <!-- Create a header for the Success page  -->
+        <header>
+            <h1>Success Message</h1>
+        </header>
+        <!-- Add a message that will display that the account has been successfully updated -->
+        <label id="lblmessSuccess" title="Success Message Box">This action completed successfully</label><br>
+        <!--<form action="LoginServlet" method="post" >-->
+        <p>Below is your registration information that you entered:</p><br>
+        <label>First Name:</label>
+        <span>${user.first}</span><br>
+        <label>Last Name:</label>
+        <span>${user.last}</span><br>
+        <label>Phone:</label>
+        <span>${user.phone}</span><br>
+        <label>Address:</label>
+        <span>${user.address}</span><br>
+        <label>City:</label>
+        <span>${user.city}</span><br>
+        <label>State:</label>
+        <span>${user.state}</span><br>
+        <label>Zip Code:</label>
+        <span>${user.zip}</span><br>
+        <label>Email:</label>
+        <span>${user.email}</span><br>
+        <label>User Name:</label>
+        <span>${user.username}</span><br>
+        <label>Password:</label>
+        <span>${user.password}</span><br>
+        <!--</form>-->
+<c:import url="/includes/footer.jsp" />

@@ -15,11 +15,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import toba.Beans.User;
+import toba.Beans.User; //import the Java beans Class library
+import toba.Data.UserDB; //import the Java Data Class library
 /**
     Name: John M Delia Jr
     SPC Student ID: 434299
     Course COP 2806 - Java Web Applications
+ */
+
+/**
+ * 
+ *1. Add the User Bean instance from the New Customer Form to the New Customer Servlet
+ * 2. Add the Username variable with username and zipcode combined
+ * 3. Add the password variable with a temporary password that is egual to Welcome1
  */
 public class NewCustomerServlet extends HttpServlet {
 
@@ -63,7 +71,9 @@ public class NewCustomerServlet extends HttpServlet {
         String password = "welcome1";
         username = username + zipcode;
         
+        //create the session scope
         HttpSession session = request.getSession();
+        
         // store data in User object
         User user = new User(firstname, lastname, phone, address, city, state, zipcode, email);
         
@@ -95,10 +105,12 @@ public class NewCustomerServlet extends HttpServlet {
         else {
             //set the variable message
             message = "";
+            UserDB.insert(user);
             //set the url
             url = "/Success.html";
             //set the message attributes
             request.setAttribute("message", message);
+            //set the user Attributes to sesson scope
             session.setAttribute("user", user);
         }
 

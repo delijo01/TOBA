@@ -1,9 +1,9 @@
 <c:import url="/includes/header.html" />
 
 <!--<%@page contentType="text/html" pageEncoding="utf-8"%>-->
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>-->
 
-<!-- <!DOCTYPE html>-->
+<!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -20,9 +20,18 @@ and open the template in the editor.
     2. Add a message that will display that the account has been successfully updated
 -->
         <!-- Create a header for the Success page  -->
-        <header>
-            <h1>Success Message</h1>
-        </header>
+<html>
+    <head>
+        <!--Add Page Title-->
+        <title>TOBA Titan Online Banking Application</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/main.css" type="text/css"/>
+    </head>
+    <body>
+        <!--<header></header>-->
+        <h1>Success Message</h1>
+        
         <!-- Add a message that will display that the account has been successfully updated -->
         <label id="lblmessSuccess" title="Success Message Box">This action completed successfully</label><br>
         <!--<form action="LoginServlet" method="post" >-->
@@ -31,6 +40,10 @@ and open the template in the editor.
         <span>${user.first}</span><br>
         <label>Last Name:</label>
         <span>${user.last}</span><br>
+        <span></span>
+        
+        <input type="text" name="PASSWORD" value="${user.password}" ><br>
+        
         <label>Phone:</label>
         <span>${user.phone}</span><br>
         <label>Address:</label>
@@ -48,4 +61,8 @@ and open the template in the editor.
         <label>Password:</label>
         <span>${user.password}</span><br>
         <!--</form>-->
-<c:import url="/includes/footer.jsp" />
+    </body>
+</html>
+    
+    
+ <c:import url="/includes/footer.jsp" />

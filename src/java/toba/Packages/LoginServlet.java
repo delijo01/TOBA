@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet {
         //Create a condition to look for the username and password specified
         if( username.equals(userid) && password.equals(pw) ) {
             //set the url
-            url = "/Account_activity.html";
+            url = "/Account_activity.jsp";
         } else {
             //set the url
             url = "/Login_failure.html";

@@ -41,9 +41,11 @@ public class User implements Serializable{
         state = "";
         zip = "";
         email = "";
+        username = "";
+        password = "";
     }
     //create a constructor for User
-    public User(String firstName, String lastName, String phone, String address, String city, String state, String zip, String email){
+    public User(String firstName, String lastName, String phone, String address, String city, String state, String zip, String email, String username, String password){
         //connect the variables
         this.firstName = firstName;
         this.lastName = lastName;
@@ -53,6 +55,8 @@ public class User implements Serializable{
         this.state = state;
         this.zip = zip;
         this.email = email;
+        this.username = username;
+        this.password = password;
     }
     //Create the first name get method
     public String getFirstName(){

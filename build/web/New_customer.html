@@ -31,18 +31,20 @@ and open the template in the editor.
     </head>
     <body>
 
-                <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
                 <!--Create a form for the New Customer Entry Process-->
                 <form action="NewCustomerServlet" method="post" >
                     <!-- Create a header for the New Customer page  -->
                     <header>
                         <h1>New Customer</h1>
                     </header>
+                        <input type="hidden" name="action" value="add">        
+                    
                     <!--<p style="align-content: center">-->
                     <!--Created a label for the FirstName input-->
                     <label class="pad_top" id="lblfirstName" title="First Name">First Name: </label>
                     <!--Created the input for the FirstName type = text-->
-                    <input type="text" id="txtFName" name="firstname" value="${user.firstName}"><br>
+                    <input type="text" id="txtFName" name="firstname"><br>
                     <!--Created a label for the LastName input-->
                     <label class="pad_top" id="lbllastName" title="Last Name" >Last Name: </label>
                     <!--Created the input for the LastName type = text-->

@@ -67,16 +67,19 @@ public class NewCustomerServlet extends HttpServlet {
         String state = request.getParameter("state");
         String zipcode = request.getParameter("zipcode");
         String email = request.getParameter("Email");
-        String username = request.getParameter("username");
-        String password = "welcome1";
-        username = username + zipcode;
+        String username = "TestName";
+        String password = "welcome1"; 
         
         //create the session scope
         HttpSession session = request.getSession();
         
         // store data in User object
-        User user = new User(firstname, lastname, phone, address, city, state, zipcode, email);
-        
+        User user = new User(firstname, lastname, phone, address, city, state, zipcode, email, username, password); 
+//        User user = new User();
+//        user.setFirstName(firstname);
+//        user.setLastName(lastname);
+//        user.setEmail(email);        
+//        user.setPhone(phone);        
         //set variable for the message
         String message;
 
@@ -89,7 +92,7 @@ public class NewCustomerServlet extends HttpServlet {
             //set the variable message
             message = "Please fill out all eight text boxes. </h1><br><h1> To return to New Customer form, please press the back button";
             //set the url
-            //url = "/New_customer.html";
+            url = "/New_customer.html";
             //set the message attributes
             request.setAttribute("message", message);
             //using a try finally
@@ -107,7 +110,7 @@ public class NewCustomerServlet extends HttpServlet {
             message = "";
             UserDB.insert(user);
             //set the url
-            url = "/Success.html";
+            url = "/Success.jsp";
             //set the message attributes
             request.setAttribute("message", message);
             //set the user Attributes to sesson scope

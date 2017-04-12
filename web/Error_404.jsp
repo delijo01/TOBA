@@ -14,7 +14,12 @@
     2. Add a Heading for the page
     3. Add a message for the page
 -->
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%-- Add the tag library to the page --%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%-- Add the header to the page --%>
+<c:import url="/includes/header.html" />
+
+<%--<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,12 +27,13 @@
         <!-- Add a title for the Error message -->
         <title>Error Code 404</title>
         <link rel="stylesheet" href="styles/main.css" type="text/css"/>
-    </head>
+    </head>--%>
     <body>
         <!-- Create a heading for the Java Error  -->
         <h1>Error message: 404 Error</h1>
         <!-- Create a message to display for the Java Error  -->
         <p>An error has occurred! Unable to locate file.</p>
         <p>To return back to the application, click the Back Button in the left hand corner.</p>
-    </body>
-</html>
+
+<%-- Add the footer to the page --%>        
+<c:import url="/includes/footer.jsp" />

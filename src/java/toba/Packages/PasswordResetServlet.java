@@ -23,10 +23,10 @@ import toba.Data.UserDB; //import the Java Data Class library
  */
 
 /**
- * 
- *1. 
- * 2. 
- * 3. 
+ *  Page Assignment for Assignment 2
+ *  1. Create servlet page 
+ *  2. retrieve the user from the session
+ *  3. change the pw to new pw from reset form
  */
 
 @WebServlet(name = "PasswordResetServlet", urlPatterns = {"/PasswordResetServlet"})
@@ -55,14 +55,19 @@ public class PasswordResetServlet extends HttpServlet {
         String url = "/password_reset.jsp";
 
         // get parameters from the request        
+        String firstname = request.getParameter("firstname");
+        String lastname = request.getParameter("lastname");
         String username = "TestName";
-        String password = request.getParameter("password");;
+        String password = request.getParameter("password");
     
         //create the session scope
         HttpSession session = request.getSession();
         
         // store data in User object
         User user = new User();
+        user.setFirstName(firstname);
+        user.setLastName(lastname);
+        user.setUserName(username);
         user.setPassword(password);
  
         String message;
@@ -88,6 +93,7 @@ public class PasswordResetServlet extends HttpServlet {
         else {
             //set the variable message
             message = "";
+            //call UserDb for future coding
             UserDB.insert(user);
             //set the url
             url = "/Account_activity.jsp";

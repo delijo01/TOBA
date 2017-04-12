@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<!-- Add the header to the page -->
+<c:import url="/includes/header.html" />
+
+<!--<!DOCTYPE html>-->
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -16,16 +19,20 @@ and open the template in the editor.
     3. Add two input eliminates (Username and Password)
     4. Add a login Button
     5. Add a link to the "New Customer Sign Up Page"
+
+    Page Assignment for Assignment 2
+    1. Add a reset password link
+
 -->
-<html>
-    <head>
+<!--<html>
+    <head>-->
         <!-- Add a title for the html -->
-        <title>System Login</title>
+<!--        <title>System Login</title>
         <link rel="stylesheet" href="styles/main.css" type="text/css"/>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+    <body>-->
         <div>
             <!-- Create a header for the Transaction page  -->
             <header>
@@ -43,8 +50,9 @@ and open the template in the editor.
                 <input type="password" id="txtPW1" name="password"><br><br>
                 <!--Created a login button for the page-->
                 <input type="submit" value ="Login">
-                <!--Created a cancel button to allow the user to cancel the entry-->
-                <!--<input type="reset" name="cancel" value ="Reset">-->
+                <!--Created a reset button to allow the user to cancel the entry-->
+                <input type="reset" name="cancel" value ="Cancel Entry"><br><br>
+                <!--Created a link to allow the user to reset their password-->
                 <a href="password_reset.jsp?action=LoginServlet">Password Reset</a><br><br>
                 <!--Created a New Customer link to allow the user to be added to the list-->
                 <a href="New_customer.html?action=LoginServlet">New Customer Sign Up</a>

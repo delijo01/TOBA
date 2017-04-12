@@ -108,6 +108,7 @@ public class NewCustomerServlet extends HttpServlet {
         else {
             //set the variable message
             message = "";
+            //call UserDb for future coding
             UserDB.insert(user);
             //set the url
             url = "/Success.jsp";

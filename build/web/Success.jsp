@@ -1,9 +1,12 @@
-<c:import url="/includes/header.html" />
-<%--
-<%@page contentType="text/html" pageEncoding="utf-8"%>
+
+<%-- Add the tag library to the page --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
---%>
-<!DOCTYPE html>
+
+<%-- Add the header to the page --%>
+<c:import url="/includes/header.html" />
+
+<%@page contentType="text/html" pageEncoding="utf-8"%>
+
 <%--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -18,6 +21,11 @@ and open the template in the editor.
     Page Assignment for Assignment 1
     1. Create a Success.html
     2. Add a message that will display that the account has been successfully updated
+
+    Page Assignment for Assignment 2
+    1. bind the customer object using EL
+    2. display all the attributes
+    3. include username and pw
 --%>
         <!-- Create a header for the Success page  -->
 <html>
@@ -36,7 +44,7 @@ and open the template in the editor.
         <label id="lblmessSuccess" title="Success Message Box">This action completed successfully</label><br>
         <%--<form action="LoginServlet" method="post" > --%>
         <p>Below is your registration information that you entered:</p><br>
-        
+        <%-- Create and bind the EL and display all the attributes along with username and pw --%>
             <label>First Name:</label>
             <span>${user.firstName}</span><br>
             <label>Last Name:</label>
@@ -62,5 +70,5 @@ and open the template in the editor.
 
 </html>
     
-    
+ <%-- add the footer to the page --%>   
  <c:import url="/includes/footer.jsp" />

@@ -13,26 +13,22 @@ and open the template in the editor.
     Page Assignment for Assignment 1
     1. Create a Account_activity.html
     2. Add a Header for the page
+
+    Page Assignment for Assignment 2
+    1. Using JSTL If Stmt
+    2. if user obj is in the session and not null display the welcome message
+        containing first and last name on page
+    3. if it does not exist display not logged in message on page
 -->
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%-- Add the tag library to the page --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%-- Add the header to the page --%>
 <c:import url="/includes/header.html" />
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-
-<html>
-    <head>-->
-        <!-- Add a title for the html -->
-        <!--<title>Customer Details</title>
-        <link rel="stylesheet" href="styles/main.css" type="text/css"/>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>-->
     <div>
         <!-- Create a header for the Transaction page  -->
         <header>
@@ -47,6 +43,6 @@ and open the template in the editor.
         <p>You are not logged into the system</p>
     </c:otherwise>
 </c:choose>
-<!--    </body>
-</html>-->
+
+<%-- Add the footer to the page --%>        
 <c:import url="/includes/footer.jsp" />

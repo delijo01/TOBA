@@ -15,15 +15,20 @@
     3. Add a message for the page
     4. XML tags that provide error handling for all java exceptions
 -->
+<%-- Add the tag library to the page --%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%-- Add the header to the page --%>
+<c:import url="/includes/header.html" />
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%--<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Add a title for the Error message -->
         <title>Error Code - Exception</title>
         <link rel="stylesheet" href="styles/main.css" type="text/css"/>
-    </head>
+    </head>--%>
     <body>
         <!-- Create a heading for the Java Error  -->
         <h1>Java Error</h1>
@@ -34,5 +39,7 @@
         <h2>Exception Details:</h2>
         <p>Type: ${pageContext.exception["class"]}</p>
         <p>Message: ${pageContext.exception.message}</p>
-    </body>
-</html>
+
+
+<%-- Add the footer to the page --%>        
+<c:import url="/includes/footer.jsp" />

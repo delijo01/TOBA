@@ -3,6 +3,13 @@
     SPC Student ID: 434299
     Course COP 2806 - Java Web Applications
 --%>
+
+<%-- 
+    Page Assignment for Assignment 2
+    1. Create a footer.jsb file
+    2. using jsp tags add a current date in the copywright information dynamically
+    3. include on all pages
+--%>
 <%@page import="java.util.Locale"%>
 <%--Pulling in the Gregorian Calendar to get current date--%>
 <%@page import="java.util.GregorianCalendar, java.util.Calendar" %>

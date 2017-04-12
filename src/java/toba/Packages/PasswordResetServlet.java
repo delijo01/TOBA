@@ -57,7 +57,7 @@ public class PasswordResetServlet extends HttpServlet {
         // get parameters from the request        
         String firstname = request.getParameter("firstname");
         String lastname = request.getParameter("lastname");
-        String username = "TestName";
+        String username = request.getParameter("username");
         String password = request.getParameter("password");
     
         //create the session scope

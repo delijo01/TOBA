@@ -21,9 +21,9 @@ and open the template in the editor.
     3. if it does not exist display not logged in message on page
 -->
 
-<%-- Add the tag library to the page --%>
+<!-- Add the tag library to the page -->
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%-- Add the header to the page --%>
+<!-- Add the header to the page -->
 <c:import url="/includes/header.html" />
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -35,14 +35,15 @@ and open the template in the editor.
             <h1>Current Account Activity</h1>
         </header>
     </div>
+    <!-- Create an if else condition to determine if the user is logged in  -->
     <c:choose>
     <c:when test="${user.password != ''}">
-        <p>Welcome ${user.firstname} ${user.lastname} to your account activity page</p>
+        <p>Welcome ${user.firstName} ${user.lastName} to your account activity page</p> 
     </c:when>
     <c:otherwise>
         <p>You are not logged into the system</p>
     </c:otherwise>
 </c:choose>
 
-<%-- Add the footer to the page --%>        
+<!-- Add the footer to the page -->        
 <c:import url="/includes/footer.jsp" />

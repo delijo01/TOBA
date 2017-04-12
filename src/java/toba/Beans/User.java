@@ -28,7 +28,7 @@ public class User implements Serializable{
     private String state;
     private String zip;
     private String email;
-    private String username;
+    private String userName;
     private String password;
     
     //create the zero argument constructor
@@ -41,11 +41,11 @@ public class User implements Serializable{
         state = "";
         zip = "";
         email = "";
-        username = "";
+        userName = "";
         password = "";
     }
     //create a constructor for User
-    public User(String firstName, String lastName, String phone, String address, String city, String state, String zip, String email, String username, String password){
+    public User(String firstName, String lastName, String phone, String address, String city, String state, String zip, String email, String userName, String password){
         //connect the variables
         this.firstName = firstName;
         this.lastName = lastName;
@@ -55,7 +55,7 @@ public class User implements Serializable{
         this.state = state;
         this.zip = zip;
         this.email = email;
-        this.username = username;
+        this.userName = userName;
         this.password = password;
     }
     //Create the first name get method
@@ -132,12 +132,12 @@ public class User implements Serializable{
     }
     //Create the user name get method
     public String getUserName(){
-        return username;
+        return userName;
     }
     //Create the user name set method
-    public void setUserName(String username){
+    public void setUserName(String userName){
         //connect the variable
-        this.username = username;
+        this.userName = userName;
     }
     //Create the password get method
     public String getPassword(){

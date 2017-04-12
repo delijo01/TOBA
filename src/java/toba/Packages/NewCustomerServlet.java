@@ -67,7 +67,7 @@ public class NewCustomerServlet extends HttpServlet {
         String state = request.getParameter("state");
         String zipcode = request.getParameter("zipcode");
         String email = request.getParameter("Email");
-        String username = "TestName";
+        String username = request.getParameter("lastname") + request.getParameter("zipcode");
         String password = "welcome1"; 
         
         //create the session scope
@@ -75,11 +75,7 @@ public class NewCustomerServlet extends HttpServlet {
         
         // store data in User object
         User user = new User(firstname, lastname, phone, address, city, state, zipcode, email, username, password); 
-//        User user = new User();
-//        user.setFirstName(firstname);
-//        user.setLastName(lastname);
-//        user.setEmail(email);        
-//        user.setPhone(phone);        
+  
         //set variable for the message
         String message;
 

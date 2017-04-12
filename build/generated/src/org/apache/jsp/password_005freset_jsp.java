@@ -100,6 +100,11 @@ public final class password_005freset_jsp extends org.apache.jasper.runtime.Http
       out.write("            <input type=\"text\" name=\"curTempPassword\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user.password}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\" ><br>\n");
+      out.write("            \n");
+      out.write("\n");
+      out.write("            <input type=\"hidden\" name=\"lastname\" value=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user.lastName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\"  ><br>\n");
       out.write("            ");
       out.write("\n");
       out.write("            <label class=\"pad_top\">New Password:</label>\n");

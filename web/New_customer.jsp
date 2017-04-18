@@ -39,11 +39,11 @@ and open the template in the editor.
                     <!--Created a label for the First Name input-->
                     <label class="pad_top" id="lblfirstName" title="First Name">First Name: </label>
                     <!--Created the input for the First Name type = text-->
-                    <input type="text" id="txtFName" name="firstName"><br>
+                    <input type="text" id="txtFName" name="firstname"><br>
                     <!--Created a label for the Last Name input-->
                     <label class="pad_top" id="lbllastName" title="Last Name" >Last Name: </label>
                     <!--Created the input for the Last Name type = text-->
-                    <input type="text" id="txtLName" name="lastName"><br>
+                    <input type="text" id="txtLName" name="lastname"><br>
                     <!--Created a label for the Phone input-->
                     <label class="pad_top" id="lblPhone" title="Phone">Phone: </label>
                     <!--Created the input for the Phone type = text-->

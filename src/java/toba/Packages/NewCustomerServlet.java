@@ -60,8 +60,8 @@ public class NewCustomerServlet extends HttpServlet {
         String url = "/New_customer.jsp";
         
         // get parameters from the request
-        String firstname = request.getParameter("firstName");
-        String lastname = request.getParameter("lastName");
+        String firstname = request.getParameter("firstname");
+        String lastname = request.getParameter("lastname");
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
         String city = request.getParameter("city");

@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import toba.Beans.User; //import the Java beans Class library
+import toba.Data.UserDB; //import the Java Data Class library
+
 /**
     Name: John M Delia Jr
     SPC Student ID: 434299
@@ -45,7 +48,7 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         //set the url
-        String url = "/index.html";
+        String url = "/index.jsp";
         //set the userid
         String userid = "jsmith@toba.com";
         //set the password
@@ -56,7 +59,7 @@ public class LoginServlet extends HttpServlet {
             url = "/Account_activity.jsp";
         } else {
             //set the url
-            url = "/Login_failure.html";
+            url = "/Login_failure.jsp";
         }
         //get the information from the form
         getServletContext()

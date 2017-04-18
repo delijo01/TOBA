@@ -45,11 +45,11 @@ public class PasswordResetServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     
-        //set the Content Type
-        response.setContentType("text/html;charset=UTF-8");
+        //set the Content Type -- removed for new process
+        //response.setContentType("text/html;charset=UTF-8");
 
-        //set printwriter to pull message
-        PrintWriter htmlnote = response.getWriter();
+        //set printwriter to pull message  -- removed for new process
+        //PrintWriter htmlnote = response.getWriter();
         
         //Set the string url
         String url = "/password_reset.jsp";
@@ -63,38 +63,38 @@ public class PasswordResetServlet extends HttpServlet {
         //create the session scope
         HttpSession session = request.getSession();
         
-        // store data in User object
-        User user = new User();
-        user.setFirstName(firstname);
-        user.setLastName(lastname);
-        user.setUserName(username);
-        user.setPassword(password);
  
         String message;
 
         //use a condition to validate the parameters
         if (password == null || password.isEmpty()) {
             //set the variable message
-            message = "Please add the new password for the password reset. </h1><br><h1> To return to Passoword Reset form, please press the back button";
+            message = "Please add the new password for the password reset.  To return to Password Reset form, please press the back button";
             //set the url
             url = "/password_reset.jsp";
             //set the message attributes
             request.setAttribute("message", message);
-            //using a try finally
-            try {
+            //using a try finally  -- removed for new process
+            //try {
                 //print the message to inform the user that information is missing from the form
-                htmlnote.println("<h1>Missing Information: </h1><br><h1>" + request.getAttribute("message") + "</h1>");
-            }
-            finally{
+            //    htmlnote.println("<h1>Missing Information: </h1><br><h1>" + request.getAttribute("message") + "</h1>");
+            //}
+            //finally{
                 //close the html connection
-                htmlnote.close();
-            }
+            //    htmlnote.close();
+            //}
         } 
         else {
             //set the variable message
             message = "";
+            // store data in User object
+            User user = new User();
+            user.setFirstName(firstname);
+            user.setLastName(lastname);
+            user.setUserName(username);
+            user.setPassword(password);
             //call UserDb for future coding
-            UserDB.insert(user);
+            //UserDB.insert(user);
             //set the url
             url = "/Account_activity.jsp";
             //set the message attributes

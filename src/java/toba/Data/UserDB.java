@@ -14,6 +14,13 @@ import toba.Beans.User;
 public class UserDB {
     
     public static long insert(User user) {
+        //ConnectionPool pool = ConnectionPool.getInstance();
+        
+        
+        return 0;
+    } 
+    
+    public static long update(User user) {
         return 0;
     }    
 }

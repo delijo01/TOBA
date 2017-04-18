@@ -28,14 +28,6 @@ and open the template in the editor.
     3. include username and pw
 -->
         <!-- Create a header for the Success page  -->
-<html>
-    <head>
-        <!--Add Page Title-->
-        <title>TOBA Titan Online Banking Application</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles/main.css" type="text/css"/>
-    </head>
     
         <!--<header></header>-->
         <h1>Success Message</h1>
@@ -43,7 +35,7 @@ and open the template in the editor.
         <!-- Add a message that will display that the account has been successfully updated -->
         <label id="lblmessSuccess" title="Success Message Box">This action completed successfully</label><br>
         <!--added a form section to the page-->
-        <form action="Login.html" method="post" >
+        <form action="Login.jsp" method="post" >
         <p>Below is your registration information that you entered:</p><br>
         <!-- Create and bind the EL and display all the attributes along with username and pw -->
             <label>First Name:</label>

@@ -20,6 +20,10 @@
         <!--Add a page heading-->
         <h1>Password Reset Form</h1>
         <br>
+        <!--Adding the code to place the message on the page-->
+        <c:if test="${message != null}">
+            <p><i>${message}</i></p>
+        </c:if>
         <!--Create a form-->
         <form action="PasswordResetServlet" method="post">
             <!--Add a label for Current PW-->
